@@ -5,7 +5,6 @@ import store from './store'
 import './plugins/element.js'
 import axios from 'axios'
 import './axios'
-
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false
 

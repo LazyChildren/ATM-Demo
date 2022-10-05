@@ -3,7 +3,7 @@ import ElementUI from 'element-ui'
 import store from '@/store'
 import router from '@/router'
 
-axios.defaults.baseURL = 'http://localhost:9091'
+axios.defaults.baseURL='http://120.46.154.76:9091'
 axios.defaults.withCredentials = true
 
 
@@ -19,6 +19,7 @@ axios.interceptors.response.use(response => {
     console.log(res)
 
     if (res.code === 200) {
+        console.log('ok')
         return response
     }
     else if(res.code === 401)

@@ -33,6 +33,8 @@ export default {
     $route(newValue) {
       console.log(newValue)
       this.$store.state.user = JSON.parse(sessionStorage.getItem('user'))
+      if(this.$store.state.user === {})
+        this.$router.push('/login')
     },
   },
   created(){

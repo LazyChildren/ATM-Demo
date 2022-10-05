@@ -1,6 +1,6 @@
 <template>
   <div >
-    <div class="top-head" align="center">
+    <div class="top-head">
       <el-row>
       <el-col :span="2" :offset="4"
         > <el-link type="primary"  icon="el-icon-umbrella" @click="homepage()">主页</el-link>
@@ -51,7 +51,7 @@ export default {
       this.$router.push(name)
     },
     homepage(){
-      if(this.$store.state.user.cust === 'cust')
+      if(this.$store.state.user.priority === 'cust')
         this.$router.push('/index')
       else
         this.$router.push('/admin')
