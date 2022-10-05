@@ -1,0 +1,21 @@
+server:
+  port: 9091
+
+spring:
+  redis:
+    host: 120.46.154.76
+    port: 6379
+    password: 123456
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 1
+        max-wait: 1000
+    database: 3
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://120.46.154.76:3306/ATM
+    username: root
+    password: 123456
