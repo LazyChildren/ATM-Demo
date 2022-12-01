@@ -75,11 +75,16 @@ export default {
                 type: 'success',
                 message: '登陆成功！欢迎您,尊敬的' + res.data.data.username + '客户' ,
               })
+              this.$store.state.isAdmin = false
               this.$router.push("/index")
 
               }
               else
+              {
+                this.$store.state.isAdmin = true
                 this.$router.push("/admin")
+
+              }
             });
         } else {
           console.log("error submit!!");

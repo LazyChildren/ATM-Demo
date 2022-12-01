@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     isLogin: false,
     user: {},
-    
+   
   },
   getters: {
     getUser: state => {
@@ -22,7 +22,7 @@ export default new Vuex.Store({
     refresh: (state) => {
 
       state.user = JSON.parse(sessionStorage.getItem("user"))
-
+      
     },
     SET_USER: (state, user) =>{
       state.user = user

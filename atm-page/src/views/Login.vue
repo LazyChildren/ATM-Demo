@@ -3,7 +3,7 @@
       <el-tabs v-model="activeName" @tab-click="handleClick" class="tabs">
         <el-tab-pane label="登录" name="login"><Form /></el-tab-pane>
 
-        <el-tab-pane label="注册" name="register"><Register/></el-tab-pane>
+        <!-- <el-tab-pane label="注册" name="register"><Register/></el-tab-pane> -->
       </el-tabs>
     </div>
 </template>

@@ -6,10 +6,13 @@
         > <el-link type="primary"  icon="el-icon-umbrella" @click="homepage()">主页</el-link>
         </el-col
       >
+      <el-col :span="2" :offset="3" v-show="this.$store.state.isAdmin"><el-link type="primary" icon="el-icon-guide" @click="routerChange('/userlist')">用户列表</el-link></el-col>
      
-      <el-col :span="2" :offset="4" v-show="this.$store.state.isLogin"><el-link type="success" icon="el-icon-user" @click="routerChange('/info')">{{this.$store.state.user.username}}</el-link></el-col>
+      <el-col :span="2" :offset="3" v-show="this.$store.state.isLogin"><el-link type="success" icon="el-icon-user" @click="routerChange('/info')">{{this.$store.state.user.username}}</el-link></el-col>
+      
       <el-col :span="2" :offset="8" v-show="!this.$store.state.isLogin"><el-link type="success" icon="el-icon-guide" @click="routerChange('/login')">登陆/注册</el-link></el-col>
-      <el-col :span="2" :offset="4" v-show="this.$store.state.isLogin"><el-link type="danger" icon="el-icon-close" @click="logout">退出</el-link></el-col>
+
+      <el-col :span="2" :offset="3" v-show="this.$store.state.isLogin"><el-link type="danger" icon="el-icon-close" @click="logout">退出</el-link></el-col>
     </el-row>
       
      

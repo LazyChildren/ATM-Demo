@@ -39,6 +39,7 @@
       data() {
         return {
           users: [],
+          machine: null,
         };
       },
       created(){
@@ -46,6 +47,12 @@
     
         console.log(res.data);
         this.users = res.data.data
+        
+      })
+      this.$axios.get('/ATM/admin/machine').then((res) => {
+    
+        console.log(res.data);
+        this.machine = res.data.data
         
       })
 

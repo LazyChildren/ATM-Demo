@@ -44,8 +44,16 @@ const routes = [
     meta:{
       showheader: true,
     },
+    component:() => import('../views/AdminHomePage.vue')
+  },
+  {
+    path: '/userlist',
+    name: 'userlistpage',
+    meta:{
+      showheader: true,
+    },
     component:() => import('../views/AdminPage.vue')
-  }
+  },
 ]
 
 const router = new VueRouter({

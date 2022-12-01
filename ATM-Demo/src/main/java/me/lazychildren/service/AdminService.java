@@ -10,4 +10,7 @@ import java.util.List;
 public interface AdminService {
     public Result getAllActivities();
     public Result getAllUser();
+    public Result getMachine();
+    public Result addMoney(Integer num);
+    public Result takeMoney(Integer num);
 }

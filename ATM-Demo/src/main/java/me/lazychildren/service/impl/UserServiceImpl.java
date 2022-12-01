@@ -4,10 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import me.lazychildren.dao.ActivityMapper;
 import me.lazychildren.dao.UserMapper;
-import me.lazychildren.pojo.ATM_Activity;
-import me.lazychildren.pojo.ATM_Customer;
-import me.lazychildren.pojo.ATM_User;
-import me.lazychildren.pojo.Result;
+import me.lazychildren.pojo.*;
 import me.lazychildren.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.session.Session;
@@ -74,7 +71,7 @@ public class UserServiceImpl implements UserService {
         user.setAmount(count + user.getAmount());
         session.setAttribute("user", user);
         activityMapper.insert(ATM_Activity.create(user, "save_money", count.toString()));
-
+        ATM_Machine.getInstance().addAmount(count);
         return Result.success(user);
     }
 
@@ -87,6 +84,12 @@ public class UserServiceImpl implements UserService {
 
             return Result.fail("余额不足");
 
+        }
+        if(!ATM_Machine.getInstance().takeAmount(count))
+        {
+            activityMapper.insert(ATM_Activity.create(user, "drow_money", "Drow-Failed"));
+
+            return Result.fail("当前机器没有足够现金,请联系管理人员!");
         }
         session.removeAttribute("user");
         UpdateWrapper<ATM_User> wrapper = new UpdateWrapper<>();

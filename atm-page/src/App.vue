@@ -25,7 +25,7 @@ export default {
   components: { Header},
   data() {
     return {
-      bgurl: "https://www.z4a.net/images/2022/08/22/illust_65261833_20200924_234507.jpg",
+      bgurl: "https://www.z4a.net/images/2022/11/19/bg.jpg",
     };
   },
   watch: {
@@ -94,7 +94,7 @@ export default {
     background-size: cover;
     transform: scale(1.1);
     position: left 10%;
-    background-image: url('https://www.z4a.net/images/2022/08/22/illust_65261833_20200924_234507.jpg');
+    background-image: url('https://www.z4a.net/images/2022/11/19/bg.jpg');
     
  }
 </style>

@@ -63,4 +63,10 @@ public class UserController {
     }
 
 
+    @GetMapping("/machine")
+    public Result getMachine(){
+        return Result.success(ATM_Machine.getInstance());
+    }
+
+
 }
